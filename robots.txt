@@ -1,0 +1,6 @@
+# robots.txt for https://ip.kangavid.online
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ip.kangavid.online/sitemap.xml
