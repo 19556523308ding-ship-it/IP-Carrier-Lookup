@@ -1,4 +1,4 @@
-// ipinfo.io配置
+// ip.kangavid.online / 权威IP数据接口配置
 const API_BASE_URL = 'https://ipinfo.io/';
 
 // 国家代码到英文全称映射

@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <title>关于我们 - IP归属地查询工具</title>
-    <meta name="description" content="了解IP归属地查询工具，一个免费、快速、准确的IP地址查询服务。">
+    <title>关于我们 - IP归属地与网络运营商查询工具</title>
+    <meta name="description" content="了解IP归属地查询工具，一个免费、快速、准确的IP与运营商信息查询服务。">
     <link rel="alternate" hreflang="zh" href="about.html">
     <link rel="alternate" hreflang="en" href="about_en.html">
     <link rel="alternate" hreflang="ja" href="about_ja.html">
@@ -15,7 +15,7 @@
 </head>
 <body>
     <div class="container">
-                <!-- 现代一体化导航栏（左侧大Logo、紧随菜单、右侧语言切换） -->
+        <!-- 现代一体化导航栏（左侧大Logo、紧随菜单、右侧语言切换） -->
         <header class="site-header-nav">
             <div class="nav-left-section">
                 <a href="index.html" class="brand-link">
@@ -24,162 +24,160 @@
                 </a>
                 <ul class="main-menu">
                     <li><a href="index.html">首页</a></li>
-                <li><a href="about.html" class="active">关于</a></li>
+                    <li><a href="about.html" class="active">关于</a></li>
                 </ul>
             </div>
             <div class="nav-lang-switcher">
                 <span>🌐</span>
-                
-            <a href="about.html" class="active" hreflang="zh">中文</a>
-            <a href="about_en.html" hreflang="en">English</a>
-            <a href="about_ja.html" hreflang="ja">日本語</a>
-            <a href="about_ko.html" hreflang="ko">한국어</a>
-            <a href="about_ru.html" hreflang="ru">Русский</a>
+                <a href="about.html" class="active" hreflang="zh">中文</a>
+                <a href="about_en.html" hreflang="en">English</a>
+                <a href="about_ja.html" hreflang="ja">日本語</a>
+                <a href="about_ko.html" hreflang="ko">한국어</a>
+                <a href="about_ru.html" hreflang="ru">Русский</a>
             </div>
         </header>
+
         <div class="hero-banner">
-            <p class="subtitle">简单、快速、准确的IP查询工具</p>
+            <p class="subtitle">简单、快速、高精度的IP与运营商网络查询服务</p>
         </div>
 
         <div class="content-section">
-            <div class="about-section">
+            <!-- 项目简介卡片 -->
+            <div class="about-card">
                 <h2>🌍 项目简介</h2>
-                <p>IP归属地查询工具是一个免费的在线服务，旨在帮助用户快速查询任意IP地址的详细归属地信息。无论您是网络管理员、开发者，还是普通用户，都可以通过我们的工具轻松获取IP地址的地理位置、运营商、时区等信息。</p>
+                <p>IP归属地查询工具（<a href="https://ip.kangavid.online" target="_blank" rel="noopener noreferrer">ip.kangavid.online</a>）是一个免费且轻量高效的在线网络分析工具，旨在帮助个人用户、站长及开发者快速定位全球任意 IPv4 / IPv6 地址的详细物理位置、自治系统（ASN）及宽带运营商信息。</p>
+                <p>无论您需要诊断日常网络连通性、排查服务器异地登录威胁，还是进行接口网络测试，本平台均能在毫秒级响应并呈现清晰的可视化归属地数据。</p>
             </div>
 
-            <div class="about-section">
+            <!-- 核心功能卡片网格 -->
+            <div class="about-card">
                 <h2>✨ 核心功能</h2>
                 <div class="features-grid">
                     <div class="feature-item">
                         <div class="feature-icon">🔍</div>
-                        <h3>IP地址查询</h3>
-                        <p>支持查询任意IPv4地址的详细归属地信息，包括国家、地区、城市等。</p>
+                        <h3>IPv4 / IPv6 双栈查询</h3>
+                        <p>支持查询全球任意公网 IPv4 与标准 IPv6 地址的精准物理位置与网络归属。</p>
                     </div>
                     <div class="feature-item">
                         <div class="feature-icon">📍</div>
-                        <h3>本机IP查询</h3>
-                        <p>一键查询您当前的公网IP地址及其归属地信息。</p>
+                        <h3>本机网络一键探测</h3>
+                        <p>智能识别您当前设备所使用的公网出口 IP，实时展示本地网络与宽带接入点。</p>
                     </div>
                     <div class="feature-item">
                         <div class="feature-icon">🗺️</div>
-                        <h3>地理位置显示</h3>
-                        <p>提供IP地址的经纬度坐标和地图链接，直观展示地理位置。</p>
+                        <h3>卫星地理坐标地图</h3>
+                        <p>精确输出经纬度坐标（Latitude & Longitude），支持一键直达高德/谷歌地图可视化标记。</p>
                     </div>
                     <div class="feature-item">
                         <div class="feature-icon">📡</div>
-                        <h3>运营商信息</h3>
-                        <p>显示IP地址的ISP（互联网服务提供商）和组织信息。</p>
+                        <h3>运营商与 ASN 分析</h3>
+                        <p>解析网络提供商（ISP）、所属机构组织（ORG）及全球互联网 BGP 路由自治系统编号。</p>
                     </div>
                     <div class="feature-item">
                         <div class="feature-icon">⏰</div>
-                        <h3>时区信息</h3>
-                        <p>查询IP地址所在地的时区信息，方便跨时区沟通。</p>
+                        <h3>本地时区自动校准</h3>
+                        <p>提供 IP 所在物理大区的权威时区标识（Timezone），便于跨国排障与业务跨时区沟通。</p>
                     </div>
                     <div class="feature-item">
                         <div class="feature-icon">⚡</div>
-                        <h3>快速响应</h3>
-                        <p>使用高效的API服务，确保查询结果快速返回。</p>
+                        <h3>超轻量毫秒级响应</h3>
+                        <p>采用纯原生轻量化前端架构与高性能边缘网络，免安装无插件，加载飞快。</p>
                     </div>
                 </div>
             </div>
 
-            <div class="about-section">
-                <h2>🎯 使用场景</h2>
+            <!-- 使用场景卡片 -->
+            <div class="about-card">
+                <h2>🎯 常见使用场景</h2>
                 <ul class="use-cases">
-                    <li><strong>网络安全：</strong>分析可疑IP地址的来源，识别潜在的网络威胁。</li>
-                    <li><strong>网站分析：</strong>了解网站访客的地理分布，优化内容和服务。</li>
-                    <li><strong>开发测试：</strong>测试地理位置相关功能，验证IP定位准确性。</li>
-                    <li><strong>日常使用：</strong>查看自己的公网IP，了解网络连接信息。</li>
-                    <li><strong>学习研究：</strong>学习IP地址结构和互联网地理分布知识。</li>
+                    <li><strong>网络安全与防护：</strong>溯源分析可疑访问 IP、阻断海外爆破攻击及异常扫描源。</li>
+                    <li><strong>网站运维与分析：</strong>分析访客及客户群体的真实地理分布，辅助 CDN 节点选型与流量调度。</li>
+                    <li><strong>开发与接口联调：</strong>测试 GeoIP 地理位置分支策略，快速验证多区域功能。</li>
+                    <li><strong>日常网络检测：</strong>一键查看当前移动蜂窝网络或宽带的公网出口 IP，定位代理翻墙节点状态。</li>
+                    <li><strong>网络知识学习：</strong>直观了解公网 IP 分配段、运营商 ASN 组织及自治系统运作原理。</li>
                 </ul>
             </div>
 
-            <div class="about-section">
-                <h2>🛠️ 技术说明</h2>
-                <p>本工具基于以下技术构建：</p>
-                <ul>
-                    <li><strong>前端技术：</strong>使用HTML5、CSS3和原生JavaScript开发，确保快速加载和流畅体验。</li>
-                    <li><strong>API服务：</strong>使用 <a href="https://ipinfo.io" target="_blank" rel="noopener noreferrer">IPinfo.io</a> 提供的免费API服务获取IP地理位置数据。</li>
-                    <li><strong>响应式设计：</strong>支持桌面、平板和手机等多种设备访问。</li>
-                    <li><strong>隐私保护：</strong>所有查询请求通过HTTPS加密传输，不存储用户查询记录。</li>
+            <!-- 技术架构卡片 -->
+            <div class="about-card">
+                <h2>🛠️ 技术架构与数据源</h2>
+                <p>本平台始终坚持极简纯净、高可用与强隐私的设计理念：</p>
+                <ul class="specs-list">
+                    <li><strong>前端工程：</strong>基于 HTML5、现代 CSS3 与原生 ECMAScript 构建，零重量级框架依赖，全站体积极致小巧。</li>
+                    <li><strong>权威数据服务：</strong>由 <a href="https://ip.kangavid.online" target="_blank" rel="noopener noreferrer">ip.kangavid.online</a> 核心数据网络提供高可用、多地域覆盖的 IP 归属地与网络运营商数据支撑。</li>
+                    <li><strong>全球边缘加速：</strong>全站由 Cloudflare 全球边缘节点统一调度，支持 HTTP/3、TLS 1.3 现代加密协议及 IPv6 直连。</li>
+                    <li><strong>零痕迹隐私保证：</strong>所有查询实时在客户端呈现，服务端不留存任何用户 IP 查询记录与搜索历史，绝无商业隐私跟踪。</li>
                 </ul>
             </div>
 
-            <div class="about-section">
+            <!-- 免责声明卡片 -->
+            <div class="about-card">
                 <h2>⚠️ 免责声明</h2>
-                <div class="disclaimer">
+                <div class="disclaimer-box">
                     <ul>
-                        <li>本工具提供的IP归属地信息仅供参考，实际位置可能存在偏差。</li>
-                        <li>IP地址的地理位置可能因网络架构、代理服务器、VPN等因素而不准确。</li>
-                        <li>我们使用的第三方API服务有查询频率限制，高峰期可能影响查询速度。</li>
-                        <li>本工具不对因使用本服务而产生的任何直接或间接损失承担责任。</li>
-                        <li>请合理使用本工具，不要用于非法目的或侵犯他人隐私。</li>
+                        <li>本工具提供的 IP 归属地信息源自公共路由表与网络数据库，定位通常精确至城市/机房级别，仅供技术排查与网络参考，不代表精确实体住宅位置。</li>
+                        <li>因运营商动态重分配、代理服务器（Proxy/VPN）、多出口负载均衡等因素，部分 IP 的地理位置可能存在实时差异。</li>
+                        <li>请在当地法律法规允许的范围内合理使用本工具，禁止将本站查询接口用于恶意爬取、网络攻击或侵犯他人隐私行为。</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="about-section">
+            <!-- 更新日志时间轴卡片 -->
+            <div class="about-card">
                 <h2>🔄 更新日志</h2>
-                <div class="changelog">
-                    <div class="changelog-item">
-                        <h4>v1.0.0 (2026年1月)</h4>
-                        <ul>
-                            <li>发布初始版本</li>
-                            <li>实现基础IP查询功能</li>
-                            <li>支持本机IP查询</li>
-                            <li>添加地理位置地图链接</li>
-                            <li>响应式界面设计</li>
-                        </ul>
+                <div class="changelog-timeline">
+                    <div class="timeline-entry">
+                        <div class="timeline-dot"></div>
+                        <span class="timeline-tag">v2.0.0 (2026年10月)</span>
+                        <div class="timeline-content">
+                            <ul>
+                                <li>升级全新 Aurora Glass 晨曦极简现代视觉设计系统</li>
+                                <li>全面支持 IPv4 与 IPv6 双栈格式自动校验与高精查询</li>
+                                <li>重构现代化一体化 Header 导航条，优化移动端屏幕响应</li>
+                                <li>官方域名升级切换至 ip.kangavid.online 独立服务体系</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-entry">
+                        <div class="timeline-dot"></div>
+                        <span class="timeline-tag">v1.0.0 (2026年1月)</span>
+                        <div class="timeline-content">
+                            <ul>
+                                <li>发布初版 IP 归属地查询引擎</li>
+                                <li>支持本机公网 IP 一键识别与经纬度地图快速链接</li>
+                                <li>集成基础多语言本地化支持</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="about-section">
-                <h2>💡 未来规划</h2>
-                <ul>
-                    <li>支持IPv6地址查询</li>
-                    <li>添加批量IP查询功能</li>
-                    <li>集成更详细的地图展示</li>
-                    <li>提供查询历史记录</li>
-                    <li>支持多语言界面</li>
-                    <li>优化移动端体验</li>
+            <!-- 致谢与支持卡片 -->
+            <div class="about-card">
+                <h2>❤️ 致谢与联系</h2>
+                <p>感谢每一位使用与支持本工具的用户。如果您在使用过程中有任何体验建议或问题，欢迎与我们沟通：</p>
+                <ul class="custom-bullet-list">
+                    <li>🌐 官方访问入口：<a href="https://ip.kangavid.online" target="_blank" rel="noopener noreferrer">https://ip.kangavid.online</a></li>
+                    <li>🔒 用户隐私条例：了解更多数据传输准则，请参阅 <a href="privacy.html">隐私政策</a></li>
+                    <li>🤝 持续贡献：感谢全球开源网络与技术社区对公共网络基础设施的大力支持</li>
                 </ul>
             </div>
 
-            <div class="about-section">
-                <h2>📞 联系方式</h2>
-                <p>如果您有任何问题、建议或反馈，欢迎通过以下方式联系我们：</p>
-                <ul>
-                    <li>📧 如有技术问题或建议，请通过GitHub Issues反馈</li>
-                    <li>🌟 如果您觉得本工具有用，欢迎分享给更多人</li>
-                    <li>🔒 隐私相关问题请查看我们的 <a href="privacy.html">隐私政策</a></li>
-                </ul>
-            </div>
-
-            <div class="about-section">
-                <h2>❤️ 致谢</h2>
-                <p>感谢以下服务和项目：</p>
-                <ul>
-                    <li><a href="https://ipinfo.io" target="_blank" rel="noopener noreferrer">IPinfo.io</a> - 提供可靠的IP地理位置数据API</li>
-                    <li>所有使用和支持本工具的用户</li>
-                    <li>开源社区的无私贡献</li>
-                </ul>
-            </div>
-
-            <div class="back-link">
-                <a href="index.html">← 返回首页</a>
+            <!-- 返回首页按钮 -->
+            <div class="back-link-wrapper">
+                <a href="index.html" class="back-btn">← 返回首页</a>
             </div>
         </div>
 
         <footer>
-            <p>© 2026 IP归属地查询工具 | <a href="about.html">关于我们</a> | <a href="privacy.html">隐私政策</a></p>
+            <p>© 2026 IP归属地查询工具 | <a href="https://ip.kangavid.online">ip.kangavid.online</a> | <a href="about.html">关于我们</a> | <a href="privacy.html">隐私政策</a></p>
         </footer>
     </div>
 
     <div id="cookieBanner" class="cookie-banner" style="display: none;">
         <p>
             <strong>Cookie 使用声明</strong> |
-            我们使用 Cookie 和类似技术来改善您的浏览体验、分析网站流量并投放个性化广告。继续使用本网站即表示您同意我们的
+            我们使用 Cookie 和类似技术来改善您的浏览体验。继续使用本网站即表示您同意我们的
             <a href="privacy.html" target="_blank">隐私政策</a>。
         </p>
         <button id="cookieAccept">同意</button>

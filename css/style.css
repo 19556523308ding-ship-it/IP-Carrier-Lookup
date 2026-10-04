@@ -546,6 +546,278 @@ footer a:hover {
     flex-shrink: 0;
 }
 
+/* ============================================================
+   关于页面与隐私页面卡片化美化样式 (About & Legal Cards)
+============================================================ */
+.content-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about-card {
+    background: var(--aurora-card);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--aurora-border);
+    border-radius: 18px;
+    padding: 26px 28px;
+    box-shadow: var(--aurora-shadow);
+    transition: all 0.25s ease;
+}
+
+.about-card:hover {
+    border-color: rgba(14, 165, 233, 0.3);
+    box-shadow: 0 12px 30px -8px rgba(14, 165, 233, 0.12);
+}
+
+.about-card h2 {
+    color: var(--aurora-text-main);
+    font-size: 1.28rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px dashed rgba(226, 232, 240, 0.8);
+    padding-bottom: 10px;
+}
+
+.about-card p {
+    color: var(--aurora-text-sub);
+    line-height: 1.75;
+    font-size: 0.96rem;
+    margin-bottom: 10px;
+}
+
+.about-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* 核心功能网格 */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-top: 14px;
+}
+
+.feature-item {
+    background: #ffffff;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 14px;
+    padding: 20px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.feature-item:hover {
+    transform: translateY(-3px);
+    border-color: var(--aurora-primary);
+    box-shadow: 0 10px 20px -5px rgba(2, 132, 199, 0.12);
+}
+
+.feature-icon {
+    font-size: 1.75rem;
+    line-height: 1;
+    margin-bottom: 12px;
+    background: rgba(2, 132, 199, 0.08);
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+.feature-item h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--aurora-text-main);
+    margin-bottom: 8px;
+}
+
+.feature-item p {
+    font-size: 0.88rem;
+    color: var(--aurora-text-sub);
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* 使用场景 & 技术规格徽章列表 */
+.specs-list, .use-cases, .custom-bullet-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.specs-list li, .use-cases li, .custom-bullet-list li {
+    background: rgba(248, 250, 252, 0.85);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    border-radius: 10px;
+    padding: 12px 16px;
+    color: var(--aurora-text-main);
+    font-size: 0.93rem;
+    line-height: 1.6;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.specs-list li strong, .use-cases li strong {
+    color: var(--aurora-primary);
+    white-space: nowrap;
+}
+
+.specs-list li::before, .use-cases li::before, .custom-bullet-list li::before {
+    content: "✦";
+    color: var(--aurora-teal);
+    font-weight: bold;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* 免责声明提示框 */
+.disclaimer-box {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-top: 10px;
+}
+
+.disclaimer-box ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.disclaimer-box li {
+    font-size: 0.9rem;
+    color: #92400e;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 20px;
+}
+
+.disclaimer-box li::before {
+    content: "•";
+    color: #d97706;
+    font-weight: bold;
+    position: absolute;
+    left: 4px;
+}
+
+/* 更新日志时间轴 */
+.changelog-timeline {
+    position: relative;
+    padding-left: 24px;
+    margin-top: 14px;
+    border-left: 2px solid rgba(2, 132, 199, 0.2);
+}
+
+.timeline-entry {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.timeline-entry:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -31px;
+    top: 2px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--aurora-primary);
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.25);
+}
+
+.timeline-tag {
+    display: inline-block;
+    background: rgba(2, 132, 199, 0.1);
+    color: var(--aurora-primary);
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.timeline-content {
+    background: #ffffff;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 12px;
+    padding: 14px 18px;
+}
+
+.timeline-content ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.timeline-content li {
+    font-size: 0.9rem;
+    color: var(--aurora-text-sub);
+    position: relative;
+    padding-left: 18px;
+}
+
+.timeline-content li::before {
+    content: "✓";
+    color: var(--aurora-teal);
+    font-size: 0.85rem;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* 返回主页按钮 */
+.back-link-wrapper {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    color: var(--aurora-primary);
+    border: 1px solid var(--aurora-border);
+    padding: 10px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: var(--aurora-shadow);
+    transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+    background: var(--aurora-gradient);
+    color: #ffffff;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(2, 132, 199, 0.25);
+}
+
 /* 响应式调整 */
 @media (max-width: 640px) {
     body {
@@ -568,4 +840,11 @@ footer a:hover {
         right: 10px;
         bottom: 10px;
     }
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    .about-card {
+        padding: 20px 16px;
+    }
 }
+
