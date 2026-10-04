@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="auroraSky" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0d9488" />
+    </linearGradient>
+    <linearGradient id="pinGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#0284c7" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <!-- 柔和现代圆角背景光盘 -->
+  <rect x="50" y="50" width="400" height="400" rx="96" fill="#f0f9ff" opacity="0.6"/>
+
+  <!-- 地球经纬弧线（极简流线） -->
+  <circle cx="250" cy="275" r="130" fill="none" stroke="url(#auroraSky)" stroke-width="6" opacity="0.85"/>
+  <ellipse cx="250" cy="275" rx="65" ry="130" fill="none" stroke="url(#auroraSky)" stroke-width="3" opacity="0.5"/>
+  <path d="M 125 275 A 130 50 0 0 0 375 275" fill="none" stroke="url(#auroraSky)" stroke-width="3" opacity="0.5"/>
+
+  <!-- 核心立体的定位图钉 Pin -->
+  <g filter="url(#softShadow)">
+    <path d="M 250 120 C 205 120 170 155 170 200 C 170 255 250 330 250 330 C 250 330 330 255 330 200 C 330 155 295 120 250 120 Z" 
+          fill="url(#pinGrad)" />
+    <!-- Pin 内部微波天线环 -->
+    <circle cx="250" cy="200" r="28" fill="#ffffff" />
+    <circle cx="250" cy="200" r="14" fill="#0284c7" />
+  </g>
+
+  <!-- 地面脉冲光晕 -->
+  <ellipse cx="250" cy="350" rx="50" ry="12" fill="#0d9488" opacity="0.25"/>
+</svg>
