@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <filter id="crispContrast" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- 外层精密六边形外框 -->
+  <polygon points="250,50 423,150 423,350 250,450 77,350 77,150" 
+           fill="#141721" stroke="#2a2f42" stroke-width="8" filter="url(#crispContrast)"/>
+  
+  <!-- 内层刻度六边形 -->
+  <polygon points="250,75 398,162 398,338 250,425 102,338 102,162" 
+           fill="none" stroke="#3b82f6" stroke-width="2" stroke-dasharray="8 8" opacity="0.4"/>
+
+  <!-- 十字瞄准基线 -->
+  <line x1="160" y1="250" x2="340" y2="250" stroke="#3e4663" stroke-width="2"/>
+  <line x1="250" y1="160" x2="250" y2="340" stroke="#3e4663" stroke-width="2"/>
+
+  <!-- IP 路由核心字形标 "IP" -->
+  <g fill="#ffffff">
+    <!-- I 柱 -->
+    <rect x="195" y="210" width="18" height="80" rx="3" />
+    <circle cx="204" cy="188" r="9" fill="#3b82f6" />
+
+    <!-- P 环 -->
+    <path d="M 245 210 L 285 210 C 305 210 318 222 318 238 C 318 254 305 266 285 266 L 263 266 L 263 290 L 245 290 Z M 263 226 L 263 250 L 283 250 C 293 250 300 244 300 238 C 300 232 293 226 283 226 Z" />
+  </g>
+
+  <!-- 四角精准标点 -->
+  <circle cx="77" cy="150" r="4" fill="#3b82f6"/>
+  <circle cx="423" cy="150" r="4" fill="#3b82f6"/>
+  <circle cx="423" cy="350" r="4" fill="#3b82f6"/>
+  <circle cx="77" cy="350" r="4" fill="#3b82f6"/>
+</svg>

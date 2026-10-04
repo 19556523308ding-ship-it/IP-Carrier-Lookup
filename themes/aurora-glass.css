@@ -1,0 +1,138 @@
+/* 方案二：Aurora Glass - 极简晨曦毛玻璃风 */
+:root {
+    --aurora-bg: #f8fafc;
+    --aurora-card: rgba(255, 255, 255, 0.75);
+    --aurora-border: rgba(226, 232, 240, 0.8);
+    --aurora-text-main: #0f172a;
+    --aurora-text-sub: #64748b;
+    --aurora-primary: #0284c7;
+    --aurora-gradient: linear-gradient(135deg, #0284c7 0%, #0d9488 100%);
+    --aurora-accent: #0ea5e9;
+    --aurora-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+}
+
+body.theme-aurora {
+    background: #f1f5f9;
+    background-image: 
+        radial-gradient(at 10% 20%, rgba(14, 165, 233, 0.08) 0px, transparent 50%),
+        radial-gradient(at 90% 80%, rgba(20, 184, 166, 0.08) 0px, transparent 50%),
+        radial-gradient(at 50% 10%, rgba(99, 102, 241, 0.05) 0px, transparent 60%);
+    color: var(--aurora-text-main);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+
+body.theme-aurora .container {
+    max-width: 920px;
+}
+
+body.theme-aurora .top-nav,
+body.theme-aurora header,
+body.theme-aurora .search-section,
+body.theme-aurora .ip-info,
+body.theme-aurora .instructions {
+    background: var(--aurora-card);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--aurora-border);
+    border-radius: 16px;
+    box-shadow: var(--aurora-shadow);
+}
+
+body.theme-aurora header h1 {
+    font-size: 2.2em;
+    font-weight: 700;
+    background: var(--aurora-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.5px;
+}
+
+body.theme-aurora .subtitle {
+    color: var(--aurora-text-sub);
+    font-weight: 400;
+}
+
+body.theme-aurora #ipInput {
+    background: #ffffff;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 12px;
+    padding: 12px 18px;
+    font-size: 16px;
+    color: #0f172a;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.theme-aurora #ipInput:focus {
+    border-color: var(--aurora-primary);
+    box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.12);
+    outline: none;
+}
+
+body.theme-aurora #searchBtn {
+    background: var(--aurora-gradient);
+    border: none;
+    border-radius: 12px;
+    color: #ffffff;
+    padding: 12px 24px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+    transition: all 0.2s;
+}
+
+body.theme-aurora #searchBtn:hover {
+    box-shadow: 0 6px 18px rgba(2, 132, 199, 0.35);
+    transform: translateY(-1px);
+}
+
+body.theme-aurora .btn-secondary {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1.5px solid #e2e8f0;
+    color: #0369a1;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+body.theme-aurora .btn-secondary:hover {
+    background: #f0f9ff;
+    border-color: #bae6fd;
+}
+
+body.theme-aurora .info-item {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(226, 232, 240, 0.7);
+    border-radius: 12px;
+    padding: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+body.theme-aurora .info-item:hover {
+    background: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+body.theme-aurora .info-label {
+    color: #64748b;
+    font-size: 0.85em;
+    font-weight: 500;
+}
+
+body.theme-aurora .info-value {
+    color: #0f172a;
+    font-weight: 600;
+}
+
+body.theme-aurora .ip-type {
+    background: #ecfdf5;
+    color: #059669;
+    border: 1px solid #a7f3d0;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+body.theme-aurora footer a {
+    color: var(--aurora-primary);
+    text-decoration: none;
+    font-weight: 500;
+}

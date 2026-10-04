@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP 归属地查询工具 - 3套视觉改版与Logo方案演示</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="themes/cyber-indigo.css">
+    <link rel="stylesheet" href="themes/aurora-glass.css">
+    <link rel="stylesheet" href="themes/monochrome-slate.css">
+    <style>
+        /* 顶部风格切换器控制器 */
+        .preview-bar {
+            position: sticky;
+            top: 10px;
+            z-index: 9999;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 12px 20px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 960px;
+            margin: 0 auto 20px auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(0,0,0,0.08);
+        }
+        .preview-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1e293b;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .theme-buttons {
+            display: flex;
+            gap: 8px;
+        }
+        .theme-btn {
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .theme-btn.active {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            transform: scale(1.05);
+        }
+        .theme-btn-cyber { background: #1e1b4b; color: #a5b4fc; }
+        .theme-btn-cyber.active { background: #6366f1; color: #fff; }
+        .theme-btn-aurora { background: #e0f2fe; color: #0369a1; }
+        .theme-btn-aurora.active { background: #0284c7; color: #fff; }
+        .theme-btn-slate { background: #1e2230; color: #94a3b8; }
+        .theme-btn-slate.active { background: #ffffff; color: #000; }
+        .theme-btn-default { background: #e4e6eb; color: #050505; }
+        .theme-btn-default.active { background: #1877f2; color: #fff; }
+
+        .brand-logo-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 8px;
+        }
+        .logo-img {
+            width: 48px;
+            height: 48px;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="theme-cyber">
+
+    <!-- 方案切换栏 -->
+    <div class="preview-bar">
+        <div class="preview-title">
+            <span>🎨 风格方案实时切换器:</span>
+        </div>
+        <div class="theme-buttons">
+            <button class="theme-btn theme-btn-cyber active" onclick="switchTheme('theme-cyber', 'assets/logo-cyber.svg')">
+                <span>⚡ 方案一：Cyber 暗黑数码</span>
+            </button>
+            <button class="theme-btn theme-btn-aurora" onclick="switchTheme('theme-aurora', 'assets/logo-aurora.svg')">
+                <span>🌅 方案二：Aurora 晨曦极简</span>
+            </button>
+            <button class="theme-btn theme-btn-slate" onclick="switchTheme('theme-slate', 'assets/logo-slate.svg')">
+                <span>⚙️ 方案三：Slate 极客高定</span>
+            </button>
+            <button class="theme-btn theme-btn-default" onclick="switchTheme('', '')">
+                <span>原版经典</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- 语言切换器 -->
+        <div class="lang-switcher">
+            <span>🌐 Language:</span>
+            <a href="index.html" class="active" hreflang="zh">中文</a>
+            <a href="index_en.html" hreflang="en">English</a>
+            <a href="index_ja.html" hreflang="ja">日本語</a>
+            <a href="index_ko.html" hreflang="ko">한국어</a>
+            <a href="index_ru.html" hreflang="ru">Русский</a>
+        </div>
+
+        <nav class="top-nav">
+            <ul>
+                <li><a href="index.html" class="active">首页</a></li>
+                <li><a href="about.html">关于</a></li>
+            </ul>
+        </nav>
+
+        <header>
+            <div class="brand-logo-wrap">
+                <img id="siteLogo" src="assets/logo-cyber.svg" alt="Logo" class="logo-img">
+                <h1 id="brandTitle">IP 归属地与网络运营商查询</h1>
+            </div>
+            <p class="subtitle" id="brandSub">全球 IP 拓扑精准识别 · 运营商 ISP · 地理经纬定位</p>
+        </header>
+
+        <!-- 搜索区域 -->
+        <div class="search-section">
+            <div class="search-box">
+                <input
+                    type="text"
+                    id="ipInput"
+                    placeholder="请输入IP地址（如：8.8.8.8 或 2400:3200::1）"
+                    autocomplete="off"
+                    value="1.1.1.1"
+                >
+                <button id="searchBtn" onclick="queryIP()">
+                    <span class="btn-text">查询</span>
+                    <span class="btn-icon">🔍</span>
+                </button>
+            </div>
+            <div class="quick-actions">
+                <button class="btn-secondary" onclick="queryMyIP()">
+                    <span>📍 查询我的当前 IP</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 加载提示 -->
+        <div id="loading" class="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>正在查询IP信息...</p>
+        </div>
+
+        <!-- 错误提示 -->
+        <div id="error" class="error" style="display: none;"></div>
+
+        <!-- IP信息显示 -->
+        <div id="ipInfo" class="ip-info" style="display: block;">
+            <div class="info-header">
+                <h2 id="ipAddress">1.1.1.1</h2>
+                <span id="ipType" class="ip-type">公网 IPv4</span>
+            </div>
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="info-label">🌏 国家 / 地区</span>
+                    <span class="info-value" id="country">澳大利亚 (Australia)</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">📍 省份 / 州</span>
+                    <span class="info-value" id="region">昆士兰 (Queensland)</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">🏙️ 城市</span>
+                    <span class="info-value" id="city">布里斯班 (Brisbane)</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">📮 邮编</span>
+                    <span class="info-value" id="zip">4000</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">🌐 运营商 (ISP)</span>
+                    <span class="info-value" id="isp">Cloudflare, Inc.</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">🏢 AS 组织</span>
+                    <span class="info-value" id="org">AS13335 CLOUDFLARENET</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">📡 经纬度</span>
+                    <span class="info-value" id="location">-27.4679, 153.0281</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">⏰ 所在时区</span>
+                    <span class="info-value" id="timezone">澳洲/布里斯班 (UTC+10)</span>
+                </div>
+            </div>
+
+            <!-- 地图容器 -->
+            <div class="map-container">
+                <h3>🗺️ 卫星与街道定位</h3>
+                <div id="mapLink" class="map-link">
+                    <p>📌 查看地图位置：</p>
+                    <a href="https://www.google.com/maps?q=-27.4679,153.0281" target="_blank" rel="noopener noreferrer">Google Maps</a>
+                    &nbsp;|&nbsp;
+                    <a href="https://www.openstreetmap.org/?mlat=-27.4679&mlon=153.0281&zoom=12" target="_blank" rel="noopener noreferrer">OpenStreetMap</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>📖 功能说明与特性</h3>
+            <ul>
+                <li><strong>双协议支持</strong>：全面支持 IPv4 与 IPv6 格式地址智能解析定位；</li>
+                <li><strong>全球运营商数据库</strong>：包含电信、移动、联通、广电及全球超 2000 家 ISP 拓扑映射；</li>
+                <li><strong>边缘加速</strong>：依托 Cloudflare CDN 边缘节点零延迟响应；</li>
+                <li><strong>隐私守门</strong>：绝不上传任何无授权用户探针与追踪 Cookie。</li>
+            </ul>
+            <div class="api-notice">
+                <strong>提示：</strong>本工具服务基于免费公共网络数据，查询结果供网络诊断与参考。
+            </div>
+        </div>
+
+        <footer>
+            <p>数据源支持：IPinfo / Cloudflare 边缘计算</p>
+            <p>© 2026 IP-Carrier-Lookup | 安全·轻量·极速</p>
+        </footer>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script>
+        function switchTheme(themeClass, logoSrc) {
+            document.body.className = themeClass;
+            document.querySelectorAll('.theme-btn').forEach(btn => btn.classList.remove('active'));
+            const logo = document.getElementById('siteLogo');
+            if (logoSrc) {
+                logo.src = logoSrc;
+                logo.style.display = 'inline-block';
+            } else {
+                logo.style.display = 'none';
+            }
+            if (themeClass === 'theme-cyber') {
+                document.querySelector('.theme-btn-cyber').classList.add('active');
+            } else if (themeClass === 'theme-aurora') {
+                document.querySelector('.theme-btn-aurora').classList.add('active');
+            } else if (themeClass === 'theme-slate') {
+                document.querySelector('.theme-btn-slate').classList.add('active');
+            } else {
+                document.querySelector('.theme-btn-default').classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
