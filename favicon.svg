@@ -1,52 +1,109 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
   <defs>
-    <!-- 极光天际渐变 -->
-    <linearGradient id="auroraGlow" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0284c7" />
-      <stop offset="50%" stop-color="#0ea5e9" />
+    <!-- 极光天际核心渐变 -->
+    <linearGradient id="auroraSkyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#0284c7" />
       <stop offset="100%" stop-color="#0d9488" />
     </linearGradient>
-    <linearGradient id="pinBodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#38bdf8" />
-      <stop offset="60%" stop-color="#0284c7" />
+
+    <!-- 定位图钉左翼微光 (高光面) -->
+    <linearGradient id="pinLeftFacet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7dd3fc" />
+      <stop offset="35%" stop-color="#38bdf8" />
+      <stop offset="85%" stop-color="#0284c7" />
       <stop offset="100%" stop-color="#0369a1" />
     </linearGradient>
-    <!-- 高级柔和立体阴影 -->
-    <filter id="proShadow" x="-30%" y="-30%" width="160%" height="160%">
-      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#0284c7" flood-opacity="0.32" />
+
+    <!-- 定位图钉右翼 (深邃背光面，形成立体棱角切面) -->
+    <linearGradient id="pinRightFacet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0ea5e9" />
+      <stop offset="45%" stop-color="#0284c7" />
+      <stop offset="85%" stop-color="#0369a1" />
+      <stop offset="100%" stop-color="#0f766e" />
+    </linearGradient>
+
+    <!-- 核心雷达环渐变 -->
+    <linearGradient id="radarRingGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="50%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#14b8a6" />
+    </linearGradient>
+
+    <!-- 地球科技网格渐变 -->
+    <linearGradient id="gridGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#0ea5e9" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#0d9488" stop-opacity="0.8" />
+    </linearGradient>
+
+    <!-- 柔和立体悬浮阴影 -->
+    <filter id="auroraProShadow" x="-25%" y="-20%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#0284c7" flood-opacity="0.36" />
     </filter>
-    <filter id="softGaze" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="6" result="blur"/>
-      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+
+    <!-- 核心高能光晕 -->
+    <filter id="coreGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
     </filter>
   </defs>
 
-  <!-- 背景彻底纯透明，无任何灰底方框 -->
+  <!-- 100% 纯透明底色，无任何方块边界 -->
 
-  <!-- 外围网络经纬脉冲环 -->
-  <circle cx="250" cy="250" r="215" fill="none" stroke="url(#auroraGlow)" stroke-width="4.5" stroke-dasharray="14 18" opacity="0.45" />
-  <circle cx="250" cy="250" r="175" fill="none" stroke="url(#auroraGlow)" stroke-width="3" opacity="0.3" />
+  <!-- 外层全球网络定位脉冲环（饱满扩张至画布边缘，占满视觉空间） -->
+  <g opacity="0.85">
+    <!-- 外层科技虚线雷达环 -->
+    <circle cx="250" cy="245" r="230" fill="none" stroke="url(#gridGrad)" stroke-width="4" stroke-dasharray="16 14" opacity="0.45" />
+    <!-- 次级轨道环 -->
+    <circle cx="250" cy="245" r="192" fill="none" stroke="url(#gridGrad)" stroke-width="2.5" opacity="0.35" />
 
-  <!-- 经纬地球圆环 -->
-  <circle cx="250" cy="250" r="150" fill="none" stroke="url(#auroraGlow)" stroke-width="7" opacity="0.75"/>
-  <ellipse cx="250" cy="250" rx="75" ry="150" fill="none" stroke="url(#auroraGlow)" stroke-width="4" opacity="0.45"/>
-  <line x1="100" y1="250" x2="400" y2="250" stroke="url(#auroraGlow)" stroke-width="4" opacity="0.5"/>
-
-  <!-- 主体立体定位图钉（饱满大气，强化视觉重心） -->
-  <g filter="url(#proShadow)">
-    <!-- 定位针主体 -->
-    <path d="M 250 85 C 185 85 135 135 135 200 C 135 285 250 395 250 395 C 250 395 365 285 365 200 C 365 135 315 85 250 85 Z" 
-          fill="url(#pinBodyGrad)" />
+    <!-- 经纬地球主轮廓 -->
+    <circle cx="250" cy="245" r="162" fill="none" stroke="url(#gridGrad)" stroke-width="6.5" opacity="0.75" />
+    <!-- 经线弧 -->
+    <ellipse cx="250" cy="245" rx="84" ry="162" fill="none" stroke="url(#gridGrad)" stroke-width="4.5" opacity="0.5" />
+    <!-- 纬线横轴 -->
+    <line x1="88" y1="245" x2="412" y2="245" stroke="url(#gridGrad)" stroke-width="4.5" opacity="0.55" />
     
-    <!-- 白色中心圆槽 -->
-    <circle cx="250" cy="195" r="46" fill="#ffffff" />
-    
-    <!-- 核心雷达微波脉冲发射点 -->
-    <circle cx="250" cy="195" r="22" fill="url(#auroraGlow)" />
-    <circle cx="250" cy="195" r="32" fill="none" stroke="#0ea5e9" stroke-width="3" stroke-dasharray="6 6" opacity="0.7" />
+    <!-- 节点坐标闪烁点（网络路由节点） -->
+    <circle cx="166" cy="245" r="4.5" fill="#38bdf8" />
+    <circle cx="334" cy="245" r="4.5" fill="#0d9488" />
+    <circle cx="250" cy="83" r="5" fill="#7dd3fc" />
+    <circle cx="250" cy="407" r="4" fill="#0284c7" opacity="0.6" />
   </g>
 
-  <!-- 地表定位辐射脉冲点 -->
-  <ellipse cx="250" cy="420" rx="65" ry="14" fill="#0d9488" opacity="0.35" filter="url(#softGaze)"/>
-  <ellipse cx="250" cy="420" rx="30" ry="6" fill="#0284c7" opacity="0.6"/>
+  <!-- 地表着陆点微光基座 -->
+  <g opacity="0.9">
+    <ellipse cx="250" cy="442" rx="82" ry="16" fill="#0d9488" opacity="0.25" filter="url(#coreGlow)" />
+    <ellipse cx="250" cy="442" rx="46" ry="9" fill="#0284c7" opacity="0.55" />
+    <circle cx="250" cy="442" r="4" fill="#38bdf8" />
+  </g>
+
+  <!-- 主体立体定位图钉（尺寸放大至顶天立地，弧度优美硬朗） -->
+  <g filter="url(#auroraProShadow)">
+    <!-- 左半翼（立体光影左切面） -->
+    <path d="M 250 48 C 168 48 106 112 106 195 C 106 305 250 435 250 435 C 250 435 250 240 250 48 Z" 
+          fill="url(#pinLeftFacet)" />
+
+    <!-- 右半翼（立体光影右切面） -->
+    <path d="M 250 48 C 332 48 394 112 394 195 C 394 305 250 435 250 435 C 250 435 250 240 250 48 Z" 
+          fill="url(#pinRightFacet)" />
+
+    <!-- 顶部高光弧顶反光微流光 -->
+    <path d="M 148 145 C 168 90 215 62 250 60 C 285 62 332 90 352 145 C 320 105 285 85 250 85 C 215 85 180 105 148 145 Z"
+          fill="#ffffff" opacity="0.28" />
+
+    <!-- 中心纯净白色定位舱口 -->
+    <circle cx="250" cy="190" r="56" fill="#ffffff" />
+    <circle cx="250" cy="190" r="56" fill="none" stroke="rgba(2, 132, 199, 0.15)" stroke-width="2" />
+
+    <!-- 核心雷达辐射环（动感天线与波纹） -->
+    <circle cx="250" cy="190" r="42" fill="none" stroke="url(#radarRingGrad)" stroke-width="4" stroke-dasharray="8 6" opacity="0.85" />
+    
+    <!-- 雷达高能实体中心球体 -->
+    <circle cx="250" cy="190" r="28" fill="url(#auroraSkyGrad)" filter="url(#coreGlow)" />
+
+    <!-- 中心闪亮高光点 -->
+    <circle cx="242" cy="182" r="7" fill="#ffffff" opacity="0.9" />
+  </g>
 </svg>
